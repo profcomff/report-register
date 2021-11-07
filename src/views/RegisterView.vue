@@ -96,13 +96,16 @@ export default {
         )
         .then(this.openOk, this.openFail);
     },
-    openOk(response) {
-      console.log(response);
-      this.$router.push('/message_ok')
+    openOk() {
+      this.$router.push("/message_ok");
     },
     openFail(response) {
       console.log(response);
-      this.$router.push(`/message_fail`)
+      if (response.status == 409) {
+        this.$router.push(`/message_fail`);
+      } else {
+        this.$router.push(`/message_critical`);
+      }
     },
   },
 };
