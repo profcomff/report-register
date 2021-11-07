@@ -94,14 +94,15 @@ export default {
             },
           }
         )
-        .then(this.openOk, this.openFail);
+        .then(this.openOk)
+        .catch(this.openFail);
     },
     openOk() {
       this.$router.push("/message_ok");
     },
-    openFail(response) {
-      console.log(response);
-      if (response.status == 409) {
+    openFail(error) {
+      console.log(error.response);
+      if (error.response.status == 409) {
         this.$router.push(`/message_fail`);
       } else {
         this.$router.push(`/message_critical`);
