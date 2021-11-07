@@ -10,7 +10,7 @@
       <p class="timer">{{ interval_string }}</p>
     </div>
     <div class="row">
-      <div class="col-sm" v-if="new Date() < this.finish_time">
+      <div class="col-sm" v-if="(new Date() < this.finish_time) & (new Date() > this.start_time)">
         <button class="btn btn-primary" @click="LoginButtonClick">Вход</button>
       </div>
       <div class="col-sm" v-if="new Date() < this.finish_time">
@@ -70,7 +70,7 @@ export default {
       }
     },
     LoginButtonClick() {
-      window.location.href = "http://report.profcomff.com/vote";
+      window.open("https://report.profcomff.com/vote").focus();
     },
     RegistrationButtonClick() {
       this.$router.push("/register");

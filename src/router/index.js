@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import StartView from "@/views/StartView.vue";
 import RegisterView from "@/views/RegisterView.vue";
-import MessageView from "@/views/MessageView.vue";
+import MessageOkView from "@/views/MessageOkView.vue";
+import MessageFailView from "@/views/MessageFailView.vue";
 
 
 const routes = [
@@ -16,9 +17,14 @@ const routes = [
       component: RegisterView,
     },
     {
-      path: "/notification",
-      name: "Сообщение",
-      component: MessageView,
+      path: "/message_ok",
+      name: "Успех!",
+      component: MessageOkView,
+    },
+    {
+      path: "/message_fail",
+      name: "Ошибка",
+      component: MessageFailView,
     },
 ];
 
