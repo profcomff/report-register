@@ -29,8 +29,10 @@
           class="form-control"
           id="patronymicInput"
           placeholder="Иванович"
-          required
         />
+        <small id="emailHelp" class="form-text text-muted"
+          >Обязательно при наличии</small
+        >
       </div>
       <div class="form-group">
         <label for="groupInput">Номер академической группы</label>
@@ -53,7 +55,7 @@
         />
         <small id="emailHelp" class="form-text text-muted"
           >Мы не будем использовать этот адрес для маркетинговых
-          рассылок.</small
+          рассылок</small
         >
       </div>
       <div class="form-check">
