@@ -23,4 +23,7 @@ export default {
 </script>
 
 <style>
+p, h2 {
+  text-align: center;
+}
 </style>
