@@ -23,7 +23,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="patronymicInput">Отчетсво</label>
+        <label for="patronymicInput">Отчество</label>
         <input
           type="text"
           class="form-control"
@@ -48,7 +48,7 @@
           type="email"
           class="form-control"
           id="emailInput"
-          placeholder="Enter email"
+          placeholder="ivanov.ii@physics.msu.ru"
           required
         />
         <small id="emailHelp" class="form-text text-muted"
