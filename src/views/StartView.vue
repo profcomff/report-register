@@ -54,16 +54,16 @@ export default {
       var mins;
       var secs;
       if (now < this.start_time) {
-        days = Math.ceil((this.start_time - now) / 1000 / 60 / 60 / 24);
-        hours = Math.ceil(((this.start_time - now) / 1000 / 60 / 60) % 24);
-        mins = Math.ceil(((this.start_time - now) / 1000 / 60) % 60);
-        secs = Math.ceil(((this.start_time - now) / 1000) % 60);
+        days = Math.floor((this.start_time - now) / 1000 / 60 / 60 / 24);
+        hours = Math.floor(((this.start_time - now) / 1000 / 60 / 60) % 24);
+        mins = Math.floor(((this.start_time - now) / 1000 / 60) % 60);
+        secs = Math.floor(((this.start_time - now) / 1000) % 60);
         return `${days}\u00A0дней ${hours}\u00A0часов ${mins}\u00A0минут ${secs}\u00A0секунд`;
       } else if (now < this.finish_time) {
-        days = Math.ceil((this.finish_time - now) / 1000 / 60 / 60 / 24);
-        hours = Math.ceil(((this.finish_time - now) / 1000 / 60 / 60) % 24);
-        mins = Math.ceil(((this.finish_time - now) / 1000 / 60) % 60);
-        secs = Math.ceil(((this.finish_time - now) / 1000) % 60);
+        days = Math.floor((this.finish_time - now) / 1000 / 60 / 60 / 24);
+        hours = Math.floor(((this.finish_time - now) / 1000 / 60 / 60) % 24);
+        mins = Math.floor(((this.finish_time - now) / 1000 / 60) % 60);
+        secs = Math.floor(((this.finish_time - now) / 1000) % 60);
         return `${days}\u00A0дней ${hours}\u00A0часов ${mins}\u00A0минут ${secs}\u00A0секунд`;
       } else {
         return "Мероприятие окончено";
