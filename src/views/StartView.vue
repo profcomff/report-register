@@ -13,7 +13,7 @@
       <div class="col-sm" v-if="(new Date() < this.finish_time) & (new Date() > this.start_time)">
         <button class="btn btn-primary" @click="LoginButtonClick">Вход</button>
       </div>
-      <div class="col-sm" v-if="new Date() < this.finish_time">
+      <div class="col-sm" v-if="new Date() < this.start_time">
         <button class="btn btn-primary" @click="RegistrationButtonClick">
           Регистрация
         </button>
@@ -26,8 +26,8 @@
 export default {
   data() {
     return {
-      start_time: new Date("2021-11-20T19:00:00"),
-      finish_time: new Date("2021-11-23T22:00:00"),
+      start_time: new Date(Date.UTC(2021, 10, 20, 16)), /* Это 19:00 20 ноября МСК */
+      finish_time: new Date(Date.UTC(2021, 10, 23, 19)), /* Это 22:00 23 ноября МСК */
       interval_string: "",
     };
   },
@@ -70,7 +70,7 @@ export default {
       }
     },
     LoginButtonClick() {
-      window.open("https://report.profcomff.com/vote").focus();
+      window.open("https://report.profcomff.com/report").focus();
     },
     RegistrationButtonClick() {
       this.$router.push("/register");
